@@ -4,11 +4,8 @@
 **Einteilung:**
 
 * Daniel: Coding und Fehlersuche
-
 * Dominik Schoblocher: Coding und Protokoll
-
 * Franjo: Coding und Git verwaltung 
-
 * Max: Coding und Design
 
 **Erstes Ziel:**
