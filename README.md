@@ -13,10 +13,10 @@ Einteilung:
 
 Erstes Ziel:
 
-Planung des Designs
+* Planung des Designs
 
 Zweites Ziel:
 
-WPF Projekt anlegen.
+* WPF Projekt anlegen.
 
-Umsetzung des Designs in WPF
+* Umsetzung des Designs in WPF
