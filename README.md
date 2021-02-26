@@ -1,7 +1,7 @@
 # MatheRechner
 ## Gruppe: Wangler, Saringer, Antic, Schoblocher
 
-**<span style="color: Orange;">Einteilung:</span>**
+**Einteilung:**
 
 * Daniel: Coding und Fehlersuche
 * Dominik Schoblocher: Coding und Protokoll
