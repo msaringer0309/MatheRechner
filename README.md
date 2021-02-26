@@ -1,7 +1,7 @@
 # MatheRechner
 ## Gruppe: Wangler, Saringer, Antic, Schoblocher
 
-Einteilung:
+**Einteilung:**
 
 * Daniel: Coding und Fehlersuche
 
@@ -11,11 +11,11 @@ Einteilung:
 
 * Max: Coding und Design
 
-Erstes Ziel:
+**Erstes Ziel:**
 
 * Planung des Designs
 
-Zweites Ziel:
+**Zweites Ziel:**
 
 * WPF Projekt anlegen.
 
