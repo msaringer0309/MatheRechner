@@ -3,13 +3,13 @@
 
 Einteilung:
 
-Daniel: Coding und Fehlersuche
+* Daniel: Coding und Fehlersuche
 
-Dominik Schoblocher: Coding und Protokoll
+* Dominik Schoblocher: Coding und Protokoll
 
-Franjo: Coding und Git verwaltung 
+* Franjo: Coding und Git verwaltung 
 
-Max: Coding und Design
+* Max: Coding und Design
 
 Erstes Ziel:
 
