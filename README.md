@@ -1,7 +1,7 @@
 # MatheRechner
 ## Gruppe: Wangler, Saringer, Antic, Schoblocher
 
-**Einteilung:**
+**<span style="color: Orange;">Einteilung:</span>**
 
 * Daniel: Coding und Fehlersuche
 * Dominik Schoblocher: Coding und Protokoll
@@ -15,5 +15,4 @@
 **Zweites Ziel:**
 
 * WPF Projekt anlegen.
-
 * Umsetzung des Designs in WPF
