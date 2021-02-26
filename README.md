@@ -1,5 +1,5 @@
 ## MatheRechner
-#Gruppe: Wangler, Saringer, Antic, Schoblocher
+# Gruppe: Wangler, Saringer, Antic, Schoblocher
 
 Einteilung:
 
