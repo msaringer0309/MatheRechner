@@ -1,0 +1,9 @@
+D:\Schule\APR\SueGui\SueGui.Core\bin\Debug\netcoreapp3.1\SueGui.Core.deps.json
+D:\Schule\APR\SueGui\SueGui.Core\bin\Debug\netcoreapp3.1\SueGui.Core.dll
+D:\Schule\APR\SueGui\SueGui.Core\bin\Debug\netcoreapp3.1\SueGui.Core.pdb
+D:\Schule\APR\SueGui\SueGui.Core\obj\Debug\netcoreapp3.1\SueGui.Core.csprojAssemblyReference.cache
+D:\Schule\APR\SueGui\SueGui.Core\obj\Debug\netcoreapp3.1\SueGui.Core.AssemblyInfoInputs.cache
+D:\Schule\APR\SueGui\SueGui.Core\obj\Debug\netcoreapp3.1\SueGui.Core.AssemblyInfo.cs
+D:\Schule\APR\SueGui\SueGui.Core\obj\Debug\netcoreapp3.1\SueGui.Core.csproj.CoreCompileInputs.cache
+D:\Schule\APR\SueGui\SueGui.Core\obj\Debug\netcoreapp3.1\SueGui.Core.dll
+D:\Schule\APR\SueGui\SueGui.Core\obj\Debug\netcoreapp3.1\SueGui.Core.pdb

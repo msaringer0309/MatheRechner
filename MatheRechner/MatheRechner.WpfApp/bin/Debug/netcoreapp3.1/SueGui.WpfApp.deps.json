@@ -1,0 +1,126 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "SueGui.WpfApp/1.0.0": {
+        "dependencies": {
+          "MvvmCross.Platforms.Wpf": "7.1.2",
+          "SueGui.Core": "1.0.0",
+          "Syncfusion.SfInput.WPF": "18.3.0.48"
+        },
+        "runtime": {
+          "SueGui.WpfApp.dll": {}
+        }
+      },
+      "MvvmCross/7.1.2": {
+        "runtime": {
+          "lib/netcoreapp3.1/MvvmCross.dll": {
+            "assemblyVersion": "7.1.2.0",
+            "fileVersion": "7.1.2.0"
+          }
+        }
+      },
+      "MvvmCross.Platforms.Wpf/7.1.2": {
+        "dependencies": {
+          "MvvmCross": "7.1.2"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/MvvmCross.Platforms.Wpf.dll": {
+            "assemblyVersion": "7.1.2.0",
+            "fileVersion": "7.1.2.0"
+          }
+        }
+      },
+      "Syncfusion.Licensing/18.3.0.48": {
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "18.3.0.48",
+            "fileVersion": "18.3.0.48"
+          }
+        }
+      },
+      "Syncfusion.SfInput.WPF/18.3.0.48": {
+        "dependencies": {
+          "Syncfusion.Licensing": "18.3.0.48",
+          "Syncfusion.SfShared.WPF": "18.3.0.48"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.SfInput.WPF.dll": {
+            "assemblyVersion": "18.3310.0.48",
+            "fileVersion": "18.3310.0.48"
+          }
+        }
+      },
+      "Syncfusion.SfShared.WPF/18.3.0.48": {
+        "dependencies": {
+          "Syncfusion.Licensing": "18.3.0.48"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.SfShared.WPF.dll": {
+            "assemblyVersion": "18.3310.0.48",
+            "fileVersion": "18.3310.0.48"
+          }
+        }
+      },
+      "SueGui.Core/1.0.0": {
+        "dependencies": {
+          "MvvmCross": "7.1.2"
+        },
+        "runtime": {
+          "SueGui.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SueGui.WpfApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MvvmCross/7.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1tYkYslR8c7Dp/3itlx8+djBp+cim/ieS1Xp+d/waL0Yrl3H4HGmqxSm89yz/Ts+H9pmrS5DeKpOb+HUOzaERQ==",
+      "path": "mvvmcross/7.1.2",
+      "hashPath": "mvvmcross.7.1.2.nupkg.sha512"
+    },
+    "MvvmCross.Platforms.Wpf/7.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Bua4RosymWv27EUT7ZD2ixrNeuYQmbqdomhWlpqa4Vop1XjS3XFzop1yv00Z37vroT1YA7VHxbFZEtoDOzv/fg==",
+      "path": "mvvmcross.platforms.wpf/7.1.2",
+      "hashPath": "mvvmcross.platforms.wpf.7.1.2.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/18.3.0.48": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8FbTrD8ox6zq0BbKysN9W5lkEKVIIMOuKmJ5kun5+73AsuIEyD4OmRg8shk9whuvspKzu4Emfmtw4uzUpQlQkA==",
+      "path": "syncfusion.licensing/18.3.0.48",
+      "hashPath": "syncfusion.licensing.18.3.0.48.nupkg.sha512"
+    },
+    "Syncfusion.SfInput.WPF/18.3.0.48": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0XibD2FXmfoPGPULtu7W0DcRMUk9WfMgFv96X2N6r+L3N0FIxAKX68gWyr3CLlHU3zwQsSQHXc2fw4C9yWe5yg==",
+      "path": "syncfusion.sfinput.wpf/18.3.0.48",
+      "hashPath": "syncfusion.sfinput.wpf.18.3.0.48.nupkg.sha512"
+    },
+    "Syncfusion.SfShared.WPF/18.3.0.48": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eFjP9icmX9+dGaqtJOJscGewUC38hIn/hNTJNSwn9qmut6VQcsYiw24gyxdTyw0EiqU9uZiBdciJ67eYkO/NVw==",
+      "path": "syncfusion.sfshared.wpf/18.3.0.48",
+      "hashPath": "syncfusion.sfshared.wpf.18.3.0.48.nupkg.sha512"
+    },
+    "SueGui.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
