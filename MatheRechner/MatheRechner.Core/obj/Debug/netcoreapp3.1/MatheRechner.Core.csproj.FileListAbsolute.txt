@@ -1,8 +1,0 @@
-D:\Schule\APR\SueGui\SueGui.Core\obj\Debug\netcoreapp3.1\MatheRechner.Core.AssemblyInfoInputs.cache
-D:\Schule\APR\SueGui\SueGui.Core\obj\Debug\netcoreapp3.1\MatheRechner.Core.AssemblyInfo.cs
-D:\Schule\APR\SueGui\SueGui.Core\obj\Debug\netcoreapp3.1\MatheRechner.Core.csproj.CoreCompileInputs.cache
-D:\Schule\APR\SueGui\SueGui.Core\bin\Debug\netcoreapp3.1\MatheRechner.Core.deps.json
-D:\Schule\APR\SueGui\SueGui.Core\bin\Debug\netcoreapp3.1\MatheRechner.Core.dll
-D:\Schule\APR\SueGui\SueGui.Core\bin\Debug\netcoreapp3.1\MatheRechner.Core.pdb
-D:\Schule\APR\SueGui\SueGui.Core\obj\Debug\netcoreapp3.1\MatheRechner.Core.dll
-D:\Schule\APR\SueGui\SueGui.Core\obj\Debug\netcoreapp3.1\MatheRechner.Core.pdb
