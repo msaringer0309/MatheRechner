@@ -1,6 +1,7 @@
 ﻿using Mathekönig.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Mathekönig.Services
@@ -9,24 +10,31 @@ namespace Mathekönig.Services
     {
         protected List<IrechnungItem> _rechnungen = new List<IrechnungItem>();
 
+       
+        public DataService()
+        {
+            Debug.WriteLine("DataService wurde erstellt");
+        }
+        
         public bool Add(IrechnungItem rechnung)
         {
-            throw new NotImplementedException();
+            this._rechnungen.Add(rechnung);
+            return true;
         }
 
         public List<IrechnungItem> All()
         {
-            throw new NotImplementedException();
+            return this._rechnungen;
         }
 
         public bool Delete(IrechnungItem rechnung)
         {
-            throw new NotImplementedException();
+            return this._rechnungen.Remove(rechnung);
         }
 
         public bool Save()
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }
