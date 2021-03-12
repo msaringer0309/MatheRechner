@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace MatheRechner.Core.ViewModels
+namespace MatheKönig.Core.ViewModels
 {
     public class EingabeViewModel : MvxViewModel
     {

@@ -8,7 +8,7 @@ using System.Text;
 using MvvmCross.Navigation;
 
 
-namespace MatheRechner.Core.ViewModels
+namespace MatheKönig.Core.ViewModels
 {
     public class MainViewModel : MvxViewModel
     {

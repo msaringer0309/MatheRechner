@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MatheRechner.Core\MatheRechner.Core.csproj" />
+    <ProjectReference Include="..\MatheRechner.Core\MatheKönig.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

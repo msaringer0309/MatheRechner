@@ -1,13 +1,13 @@
 ﻿using MvvmCross;
 using MvvmCross.ViewModels;
-using MatheRechner.Core.ViewModels;
+using MatheKönig.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 
 
-namespace MatheRechner.Core
+namespace MatheKönig.Core
 {
     public class Setup : MvxApplication
     {

@@ -1,6 +1,6 @@
 ﻿using MvvmCross.Platforms.Wpf.Views;
 
-namespace MatheRechner.WpfApp.Views
+namespace MatheKönig.WpfApp.Views
 {
     /// <summary>
     /// Interaktionslogik für MainView.xaml

@@ -2,13 +2,13 @@
 using MvvmCross.Platforms.Wpf.Core;
 using MvvmCross.ViewModels;
 
-namespace MatheRechner.WpfApp
+namespace MatheKönig.WpfApp
 {
     public class Setup : MvxWpfSetup
     {
         protected override IMvxApplication CreateApp()
         { 
-            return new MatheRechner.Core.Setup(); 
+            return new MatheKönig.Core.Setup(); 
 
         }
 

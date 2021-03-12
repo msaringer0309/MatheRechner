@@ -1,9 +1,9 @@
 ﻿using MvvmCross.Core;
 using MvvmCross.Platforms.Wpf.Core;
 using MvvmCross.Platforms.Wpf.Views;
-using MatheRechner.Core;
+using MatheKönig.Core;
 
-namespace MatheRechner.WpfApp
+namespace MatheKönig.WpfApp
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -12,7 +12,7 @@ namespace MatheRechner.WpfApp
     {
         protected override void RegisterSetup()
         {
-            this.RegisterSetupType<MatheRechner.WpfApp.Setup>();
+            this.RegisterSetupType<MatheKönig.WpfApp.Setup>();
         }
     }
 }
