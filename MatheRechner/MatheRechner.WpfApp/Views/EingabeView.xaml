@@ -11,8 +11,8 @@
     <Grid RenderTransformOrigin="0.523,0.567">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="GreenYellow" Offset="1"/>
-                <GradientStop Color="#F8C630" Offset="0.165"/>
+                <GradientStop Color="#451F55" Offset="0.5"/>
+                <GradientStop Color="#F8C630" Offset="0.35"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.ColumnDefinitions>
@@ -89,7 +89,7 @@
             </TextBox.Effect>
             <TextBox.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFD6D6D6" Offset="0.331"/>
+                    <GradientStop Color="White" Offset="0.331"/>
                     <GradientStop Color="White" Offset="0.986"/>
                 </LinearGradientBrush>
             </TextBox.Background>
