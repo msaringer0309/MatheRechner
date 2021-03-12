@@ -7,11 +7,11 @@ namespace Mathekönig.Services
 {
     public interface IDataService
     {
-        List<IrechnungItem> All();
+        List<IRechnungItem> All();
 
-        bool Add(IrechnungItem rechnung);
+        bool Add(IRechnungItem rechnung);
 
-        bool Delete(IrechnungItem rechnung);
+        bool Delete(IRechnungItem rechnung);
 
         bool Save();
     }

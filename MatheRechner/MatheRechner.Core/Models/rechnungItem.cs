@@ -6,7 +6,7 @@ using System.Text;
 namespace Mathekönig.Models
 {
     [Table("rechnung")]
-    public class rechnungItem
+    public class RechnungItem
     {
         [PrimaryKey, Column("Rechnungsnummer")]
 

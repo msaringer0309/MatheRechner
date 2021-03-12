@@ -8,7 +8,7 @@ namespace Mathekönig.Services
 {
     public class DataService : IDataService
     {
-        protected List<IrechnungItem> _rechnungen = new List<IrechnungItem>();
+        protected List<IRechnungItem> _rechnungen = new List<IRechnungItem>();
 
        
         public DataService()
@@ -16,18 +16,18 @@ namespace Mathekönig.Services
             Debug.WriteLine("DataService wurde erstellt");
         }
         
-        public bool Add(IrechnungItem rechnung)
+        public bool Add(IRechnungItem rechnung)
         {
             this._rechnungen.Add(rechnung);
             return true;
         }
 
-        public List<IrechnungItem> All()
+        public List<IRechnungItem> All()
         {
             return this._rechnungen;
         }
 
-        public bool Delete(IrechnungItem rechnung)
+        public bool Delete(IRechnungItem rechnung)
         {
             return this._rechnungen.Remove(rechnung);
         }

@@ -9,9 +9,4 @@
     <PackageReference Include="sqlite-net-sqlcipher" Version="1.7.335" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>

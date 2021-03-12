@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mathekönig.Models
 {
-    public interface IrechnungItem
+    public interface IRechnungItem
     {
         string Rechnungsnummer { get; set; }
 
