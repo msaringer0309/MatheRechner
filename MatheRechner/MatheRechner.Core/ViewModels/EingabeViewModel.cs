@@ -31,6 +31,19 @@ namespace MatheKönig.Core.ViewModels
             this._dataService = dataService;
         }
 
+        private MvxCommand _backCommand = null;
+
+        public MvxCommand GoBackCommand
+        {
+            get
+            {
+                return _backCommand ?? (_backCommand = new MvxCommand()) =>
+                {
+                    //ins vorherige Fenster
+                    this._navigationService.Close(this);
+                }
+            }
+        }
        
     }
 }
