@@ -6,8 +6,9 @@ using System.Text;
 namespace Mathekönig.Models
 {
     [Table("rechnung")]
-    public class RechnungItem
+    public class RechnungItem : IRechnungItem
     {
+
         [PrimaryKey, Column("Rechnungsnummer")]
 
         public string Rechnungsnummer { get; set; } = Guid.NewGuid().ToString();

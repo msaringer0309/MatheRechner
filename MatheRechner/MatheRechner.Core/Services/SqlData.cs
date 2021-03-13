@@ -11,7 +11,7 @@ namespace MatheKönig.Core.Services
 {
     public class SqlData : IDataService
     {
-        private string Filename { get; set; } = "password.db";
+        private string Filename { get; set; } = "rechnungen.db";
 
         private string Dir { get; set; } = Directory.GetCurrentDirectory();
 
@@ -40,8 +40,8 @@ namespace MatheKönig.Core.Services
                                  GeneratedDateTime = r.GeneratedDateTime
                              };
             
-           // return rechnungen.ToList<IRechnungItem>(); 
-           
+           return rechnungen.ToList<IRechnungItem>();
+
         }
 
         public bool Add(IRechnungItem rechnung)
