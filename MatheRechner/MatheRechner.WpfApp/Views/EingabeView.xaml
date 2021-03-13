@@ -83,7 +83,7 @@
             <TextBlock.Effect>
                 <DropShadowEffect/>
             </TextBlock.Effect><Run Text="2 * 2 ="/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
-        <TextBox Text="{Binding Eingabe, UpdateSourceTrigger=PropertyChanged}" FontSize="25" Grid.ColumnSpan="2" Margin="15,0,0,0" TextWrapping="Wrap"  Grid.Row="3" HorizontalAlignment="Left" Width="74" Grid.Column="3" Grid.RowSpan="2" Height="49" VerticalAlignment="Bottom" >
+        <TextBox Text="{Binding Eingabe , UpdateSourceTrigger=PropertyChanged}" FontSize="25" Grid.ColumnSpan="2" Margin="15,0,0,0" TextWrapping="Wrap"  Grid.Row="3" HorizontalAlignment="Left" Width="74" Grid.Column="3" Grid.RowSpan="2" Height="49" VerticalAlignment="Bottom" >
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>

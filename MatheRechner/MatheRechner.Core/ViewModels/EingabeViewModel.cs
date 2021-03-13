@@ -15,6 +15,7 @@ namespace MatheKönig.Core.ViewModels
 {
     public class EingabeViewModel : MvxViewModel 
     {
+
         private protected IDataService _dataService;
         private protected IMvxNavigationService _navigationService;
 
