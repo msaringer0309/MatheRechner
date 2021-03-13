@@ -9,13 +9,14 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace MatheKönig.Core.ViewModels
 {
     public class EingabeViewModel : MvxViewModel 
     {
-        private IDataService _dataService;
-        private IMvxNavigationService _navigationService;
+        private protected IDataService _dataService;
+        private protected IMvxNavigationService _navigationService;
 
         private MvxObservableCollection<IRechnungItem> _rechungen;
 
@@ -44,6 +45,14 @@ namespace MatheKönig.Core.ViewModels
             }
         }
 
+        public override async Task Initialize()
+        {
+            await base.Initialize();
+
+            var rechnungen = _dataService.All();
+
+            Rechnungen = new MvxObservableCollection<IRechnungItem>(rechnungen);
+        }
        
     }
 }
