@@ -4,8 +4,9 @@ using MatheKönig.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
-
-
+using Mathekönig.Services;
+using MatheKönig.Core.Services;
+using MvvmCross.IoC;
 
 namespace MatheKönig.Core
 {
@@ -13,12 +14,13 @@ namespace MatheKönig.Core
     {
         public override void Initialize()
         {
-    
-            
-            
-           
 
-            RegisterAppStart<EingabeViewModel>();
+            Mvx.IoCProvider.RegisterType<IDataService>();
+            Mvx.IoCProvider.RegisterSingleton<IDataService>(new SqlData());
+
+
+
+            RegisterAppStart<MainViewModel>();
         }
     }
 }
