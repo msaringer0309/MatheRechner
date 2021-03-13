@@ -18,7 +18,13 @@ namespace MatheKönig.Core.ViewModels
 
         private MvxObservableCollection<IRechnungItem> _rechungen;
 
-        
+        public MvxObservableCollection<IRechnungItem> Rechnungen
+        {
+            get => _rechungen;
+            set => SetProperty(ref _rechungen, value);
+        }
+
+        // public EingabeViewModel(IMvxNavigationService navigationService)
     }
 }
     
