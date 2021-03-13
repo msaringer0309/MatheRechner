@@ -12,9 +12,10 @@ using System.Text;
 
 namespace MatheKönig.Core.ViewModels
 {
-    public class EingabeViewModel : MvxViewModel
+    public class EingabeViewModel : MvxViewModel 
     {
         private IDataService _dataService;
+        private IMvxNavigationService _navigationService;
 
         private MvxObservableCollection<IRechnungItem> _rechungen;
 
@@ -24,7 +25,13 @@ namespace MatheKönig.Core.ViewModels
             set => SetProperty(ref _rechungen, value);
         }
 
-        // public EingabeViewModel(IMvxNavigationService navigationService)
+        public EingabeViewModel(IMvxNavigationService navigationService, IDataService dataService)
+        {
+            this._navigationService = navigationService;
+            this._dataService = dataService;
+        }
+
+       
     }
 }
     
