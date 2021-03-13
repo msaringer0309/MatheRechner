@@ -21,6 +21,8 @@ namespace MatheKönig.Core.ViewModels
             this._navService = navService;
         }
 
+       
+
         private MvxCommand _goToRechnungenListcommand = null;
 
        

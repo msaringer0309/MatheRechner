@@ -37,13 +37,13 @@ namespace MatheKönig.Core.ViewModels
         {
             get
             {
-                return _backCommand ?? (_backCommand = new MvxCommand()) =>
+                return _backCommand ?? (_backCommand = new MvxCommand(() =>
                 {
-                    //ins vorherige Fenster
                     this._navigationService.Close(this);
-                }
+                }));
             }
         }
+
        
     }
 }
