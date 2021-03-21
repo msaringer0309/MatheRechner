@@ -5,7 +5,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:MvvmCross.Platforms.Wpf.Views;assembly=MvvmCross.Platforms.Wpf"
-        xmlns:local="clr-namespace:MatheKönig.WpfApp.Views"
         mc:Ignorable="d" Height="459" Width="721"
         >
     <Grid RenderTransformOrigin="0.523,0.567">

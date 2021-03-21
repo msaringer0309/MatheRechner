@@ -1,40 +1,61 @@
-﻿using MvvmCross.Commands;
+﻿using System;
 using MvvmCross.ViewModels;
-using MvvmCross.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
-using MvvmCross.Navigation;
-using Mathekönig.Services;
+using System.Windows.Input;
+
 
 namespace MatheKönig.Core.ViewModels
 {
     public class MainViewModel : MvxViewModel
     {
-        IDataService _dataService;
-        IMvxNavigationService _navService;
-
-        public MainViewModel(IDataService dataService, IMvxNavigationService navService)
+        public class ViewModel 
         {
-            this._dataService = dataService;
-            this._navService = navService;
-        }
+            public Calculator Calculator { get; set; }
 
-       
-
-        private MvxCommand _goToRechnungenListcommand = null;
-
-       
-        public MvxCommand GoToRechnungenListCommand
-        {
-            get
+            public ViewModel()
             {
-                return _goToRechnungenListcommand ?? (_goToRechnungenListcommand = new MvxCommand(() =>
+                this.Calculator = new Calculator();
+
+            }
+
+            private ICommand numberCommand;
+
+            public ICommand NumberCommand
+            {
+                get
                 {
-                    this._navService.Navigate<EingabeViewModel>();
-                }));
+                    return this.numberCommand
+                           ?? (this.numberCommand = new RelayCommand<string>(this.NumberClicked));
+                }
+            }
+
+            private ICommand operationCommand;
+
+            public ICommand OperationCommand
+            {
+                get
+                {
+                    return this.operationCommand
+                           ?? (this.operationCommand = new RelayCommand<string>(this.OperationClicked));
+                }
+            }
+
+            private void OperationClicked(string operation)
+            {
+                this.Calculator.SetOperation(operation);
+                this.OnPropertyChanged("Calculator");
+            }
+
+            private void OnPropertyChanged(string v)
+            {
+                throw new NotImplementedException();
+            }
+
+            private void NumberClicked(string number)
+            {
+                this.Calculator.ExpandNumber(number[0]);
+                this.OnPropertyChanged("Calculator");
             }
         }
     }
 }
+

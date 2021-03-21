@@ -7,8 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Page Remove="Views\MainWindow.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="MainWindow.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MvvmCross.Platforms.Wpf" Version="7.1.2" />
-    <PackageReference Include="NLog" Version="4.7.5" />
+    <PackageReference Include="Syncfusion.SfInput.WPF" Version="18.4.0.48" />
   </ItemGroup>
 
   <ItemGroup>
