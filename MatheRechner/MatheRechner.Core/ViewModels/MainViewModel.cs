@@ -24,7 +24,7 @@ namespace MatheKönig.Core.ViewModels
                 get
                 {
                     return this.numberCommand
-                           ?? (this.numberCommand = new RelayCommand<string>(this.NumberClicked));
+                           ?? (this.numberCommand = new MainViewCommand<string>(this.NumberClicked));
                 }
             }
 
@@ -35,7 +35,7 @@ namespace MatheKönig.Core.ViewModels
                 get
                 {
                     return this.operationCommand
-                           ?? (this.operationCommand = new RelayCommand<string>(this.OperationClicked));
+                           ?? (this.operationCommand = new MainViewCommand<string>(this.OperationClicked));
                 }
             }
 

@@ -33,24 +33,24 @@
             <Button Content="MR"  Grid.Column="1" Grid.Row="0"/>
             <Button Content="MS"  Grid.Column="2" Grid.Row="0"/>
             <Button Content="AC"  Grid.Column="4" Grid.Row="0"/>
-            <Button Content="1"   Grid.Column="0" Grid.Row="1" Command="{Binding NumberCommand}" CommandParameter="1"/>
-            <Button Content="2"   Grid.Column="1" Grid.Row="1" Command="{Binding NumberCommand}" CommandParameter="2"/>
-            <Button Content="3"   Grid.Column="2" Grid.Row="1" Command="{Binding NumberCommand}" CommandParameter="3"/>
-            <Button Content="4"   Grid.Column="0" Grid.Row="2" Command="{Binding NumberCommand}" CommandParameter="4"/>
-            <Button Content="5"   Grid.Column="1" Grid.Row="2" Command="{Binding NumberCommand}" CommandParameter="5"/>
-            <Button Content="6"   Grid.Column="2" Grid.Row="2" Command="{Binding NumberCommand}" CommandParameter="6"/>
-            <Button Content="7"   Grid.Column="0" Grid.Row="3" Command="{Binding NumberCommand}" CommandParameter="7"/>
-            <Button Content="8"   Grid.Column="1" Grid.Row="3" Command="{Binding NumberCommand}" CommandParameter="8"/>
-            <Button Content="9"   Grid.Column="2" Grid.Row="3" Command="{Binding NumberCommand}" CommandParameter="9"/>
-            <Button Content="0"   Grid.Column="1" Grid.Row="4" Command="{Binding NumberCommand}" CommandParameter="0"/>
+            <Button Content="1"   Grid.Column="0" Grid.Row="1" Command="{Binding                 }" CommandParameter="1"/>
+            <Button Content="2"   Grid.Column="1" Grid.Row="1" Command="{Binding                 }" CommandParameter="2"/>
+            <Button Content="3"   Grid.Column="2" Grid.Row="1" Command="{Binding                 }" CommandParameter="3"/>
+            <Button Content="4"   Grid.Column="0" Grid.Row="2" Command="{Binding                 }" CommandParameter="4"/>
+            <Button Content="5"   Grid.Column="1" Grid.Row="2" Command="{Binding                 }" CommandParameter="5"/>
+            <Button Content="6"   Grid.Column="2" Grid.Row="2" Command="{Binding                 }" CommandParameter="6"/>
+            <Button Content="7"   Grid.Column="0" Grid.Row="3" Command="{Binding                 }" CommandParameter="7"/>
+            <Button Content="8"   Grid.Column="1" Grid.Row="3" Command="{Binding                 }" CommandParameter="8"/>
+            <Button Content="9"   Grid.Column="2" Grid.Row="3" Command="{Binding                 }" CommandParameter="9"/>
+            <Button Content="0"   Grid.Column="1" Grid.Row="4" Command="{Binding                 }" CommandParameter="0"/>
             <Button Content=","   Grid.Column="2" Grid.Row="4"/>
-            <Button Content="+"   Grid.Column="3" Grid.Row="1" Command="{Binding OperationCommand}" CommandParameter="+" />
-            <Button Content="-"   Grid.Column="4" Grid.Row="1" Command="{Binding OperationCommand}" CommandParameter="-"/>
-            <Button Content="x"   Grid.Column="3" Grid.Row="2" Command="{Binding OperationCommand}" CommandParameter="*"/>
-            <Button Content="/"   Grid.Column="4" Grid.Row="2" Command="{Binding OperationCommand}" CommandParameter="/"/>
-            <Button Content="%"   Grid.Column="3" Grid.Row="3" Command="{Binding OperationCommand}" CommandParameter="%"/>
-            <Button Content="mod" Grid.Column="4" Grid.Row="3" Command="{Binding OperationCommand}" CommandParameter="mod"/>
-            <Button Content="=" Grid.Column="4" Grid.Row="4"   Command="{Binding OperationCommand}" CommandParameter="="/>
+            <Button Content="+"   Grid.Column="3" Grid.Row="1" Command="{Binding AdditionsCommand}" CommandParameter="+" />
+            <Button Content="-"   Grid.Column="4" Grid.Row="1" Command="{Binding Subtraktionscommand}" CommandParameter="-"/>
+            <Button Content="x"   Grid.Column="3" Grid.Row="2" Command="{Binding Multiplikationscommand}" CommandParameter="*"/>
+            <Button Content="/"   Grid.Column="4" Grid.Row="2" Command="{Binding Divisionscommand}" CommandParameter="/"/>
+            <Button Content="%"   Grid.Column="3" Grid.Row="3" Command="{Binding Prozentcommand}" CommandParameter="%"/>
+            <Button Content="mod" Grid.Column="4" Grid.Row="3" Command="{Binding RestCommand}" CommandParameter="mod"/>
+            <Button Content="=" Grid.Column="4" Grid.Row="4"   Command="{Binding EqualCommand }" CommandParameter="="/>
 
         </Grid>
     </Grid>

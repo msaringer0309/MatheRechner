@@ -6,7 +6,7 @@ using System.Windows.Input;
 namespace MatheKönig.Core
 {
     
-        public class RelayCommand<T> : ICommand
+        public class MainViewCommand<T> : ICommand
         {
             #region Fields
 
@@ -22,7 +22,7 @@ namespace MatheKönig.Core
             /// </summary>
             /// <param name="execute">Execute dann aufrufen wenn es auf Command aufgerufen wird</param>
             /// <remarks><seealso cref="CanExecute"/> bleibt immer true </remarks>
-            public RelayCommand(Action<T> execute)
+            public MainViewCommand(Action<T> execute)
                 : this(execute, null)
             {
             }
@@ -32,7 +32,7 @@ namespace MatheKönig.Core
             /// </summary>
             /// <param name="execute">Logik</param>
             /// <param name="canExecute">Status des Commands</param>
-            public RelayCommand(Action<T> execute, Predicate<T> canExecute)
+            public MainViewCommand(Action<T> execute, Predicate<T> canExecute)
             {
                 if (execute == null)
                     throw new ArgumentNullException("execute");
@@ -40,6 +40,8 @@ namespace MatheKönig.Core
                 _execute = execute;
                 _canExecute = canExecute;
             }
+
+       
 
         public event EventHandler CanExecuteChanged;
 
