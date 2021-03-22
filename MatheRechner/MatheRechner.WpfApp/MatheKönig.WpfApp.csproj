@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\calculator.jpg" />
+    <None Remove="Views\kisspng-office-supplies-animation-calculator-5a85e765161282.0662610015187249650904.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Remove="Views\MainWindow.xaml" />
   </ItemGroup>
 
@@ -21,6 +26,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MatheRechner.Core\MatheKönig.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\calculator.jpg" />
+    <Resource Include="Views\kisspng-office-supplies-animation-calculator-5a85e765161282.0662610015187249650904.png" />
   </ItemGroup>
 
   <ItemGroup>

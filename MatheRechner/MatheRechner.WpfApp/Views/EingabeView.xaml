@@ -71,8 +71,8 @@
         <TextBlock HorizontalAlignment="Center" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.193,0.549" Height="40" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="4" Grid.Column="1" Margin="0,20,0,5">
             <TextBlock.Effect>
                 <DropShadowEffect/>
-            </TextBlock.Effect><Run Text="2 * 2 ="/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
-        <TextBox Text="{Binding Eingabe , UpdateSourceTrigger=PropertyChanged}" FontSize="25" TextWrapping="Wrap"  Grid.Row="5" HorizontalAlignment="Center" Width="92" Grid.Column="1" Margin="0,5,0,20" TextChanged="TextBox_TextChanged" TextAlignment="Center">
+            </TextBlock.Effect><Run Text="*"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <TextBox Text="{Binding Eingabe, UpdateSourceTrigger=PropertyChanged}" FontSize="25" TextWrapping="Wrap"  Grid.Row="5" HorizontalAlignment="Center" Width="92" Grid.Column="1" Margin="0,5,0,20" TextChanged="TextBox_TextChanged" TextAlignment="Center">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
@@ -87,6 +87,14 @@
             <TextBlock.Effect>
                 <DropShadowEffect/>
             </TextBlock.Effect><Run Language="de-at" Text="falsch gelöst"/><LineBreak/><Run Language="de-at"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Right" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.193,0.549" Height="40" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="4" Grid.Column="0" Margin="0,20,0,0">
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect><Run Text="{Binding Zahl1}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.193,0.549" Height="40" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="4" Grid.Column="2" Margin="0,20,0,0">
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect><Run Text="{Binding Zahl2}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
 
 
 
