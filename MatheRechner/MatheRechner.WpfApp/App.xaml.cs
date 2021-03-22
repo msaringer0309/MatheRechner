@@ -12,7 +12,7 @@ namespace MatheKönig.WpfApp
     {
         protected override void RegisterSetup()
         {
-            this.RegisterSetupType<MatheKönig.WpfApp.Setup>();
+            this.RegisterSetupType<MvxWpfSetup<Setup>>();
         }
     }
 }
