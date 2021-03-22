@@ -15,7 +15,11 @@ namespace MatheKönig.Core.ViewModels
 {
     public class EingabeViewModel : MvxViewModel 
     {
-
+       public EingabeViewModel()
+       {
+           GenZahl2();
+           GenZahl1();
+       }
         private protected IDataService _dataService;
         private protected IMvxNavigationService _navigationService;
 
@@ -54,7 +58,30 @@ namespace MatheKönig.Core.ViewModels
 
             Rechnungen = new MvxObservableCollection<IRechnungItem>(rechnungen);
         }
-       
+        private int _zahl1;
+        public int Zahl1
+        {
+            get { return _zahl1; }
+            set { _zahl1 = value; RaisePropertyChanged(() => Zahl1); }
+        }
+        public void GenZahl1()
+        {
+            Random r = new Random();
+            this._zahl1 = r.Next(1, 10);
+        }
+
+        private int _zahl2;
+   
+        public int Zahl2
+        {
+            get { return _zahl2; }
+            set { _zahl2 = value; RaisePropertyChanged(() => Zahl2); }
+        }
+        public void GenZahl2()
+        {
+            Random r = new Random();
+            this.Zahl2 = r.Next(0, 10);
+        }
     }
 }
     
