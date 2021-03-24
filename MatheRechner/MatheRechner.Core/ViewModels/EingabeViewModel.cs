@@ -50,7 +50,7 @@ namespace MatheKönig.Core.ViewModels
             }
         }
 
-        public override async Task Initialize()
+       /* public override async Task Initialize()
         {
             await base.Initialize();
 
@@ -58,6 +58,7 @@ namespace MatheKönig.Core.ViewModels
 
             Rechnungen = new MvxObservableCollection<IRechnungItem>(rechnungen);
         }
+        */
         private int _zahl1;
         public int Zahl1
         {
@@ -81,6 +82,61 @@ namespace MatheKönig.Core.ViewModels
         {
             Random r = new Random();
             this.Zahl2 = r.Next(0, 10);
+        }
+
+        private MvxCommand _randCommand = null;
+
+        public MvxCommand RandCommand
+        {
+            get
+            {
+                return _randCommand ?? (_randCommand = new MvxCommand(ErstellungZahl));
+            }
+        }
+
+        private bool _rand = false;
+        public bool Rand
+        {
+            get => _rand;
+            set => SetProperty(ref _rand, value);
+        }
+
+        private void ErstellungZahl()
+        {
+            Random gen = new Random();
+            this.Zahl1 = gen.Next(2, 10);
+            this.Zahl2 = gen.Next(2, 10);
+            this.Erg = this.Zahl1 * this.Zahl2;
+        }
+
+        private int _erg;
+        public int Erg
+        {
+            get => _erg;
+            set => SetProperty(ref _erg, value);
+        }
+
+        private MvxCommand _ergCommand = null;
+        public MvxCommand ErgCommand
+        {
+            get
+            {
+                return _ergCommand ?? (_ergCommand = new MvxCommand(ErstellungZahl));
+            }
+        }
+
+        public int Eingabe = 0;
+
+        private void EingabeKontrolle()
+        {
+            if (Eingabe == Erg)
+            {
+                Debug.WriteLine("Richtig");
+            }
+            else
+            {
+                Debug.WriteLine("Falsch");
+            }
         }
     }
 }
