@@ -25,7 +25,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -47,7 +47,7 @@
                 <DropShadowEffect/>
             </TextBlock.Effect><Run Language="de-at" Text="Anzahl der Aufgaben"/><LineBreak/><Run Language="de-at"/></TextBlock>
 
-        <Button Command="{Binding Auswertung}" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="20" Content="Auswertung" HorizontalAlignment="Left" Height="36" Grid.Row="6" Grid.ColumnSpan="2" VerticalAlignment="Top" Width="315" Click="Button_Click" Margin="20,20,0,0" Grid.Column="0" >
+        <Button Command="{Binding EingabeKontrolle}" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="20" Content="Auswertung" HorizontalAlignment="Left" Height="36" Grid.Row="6" Grid.ColumnSpan="2" VerticalAlignment="Top" Width="315" Click="Button_Click" Margin="20,20,0,0" Grid.Column="0" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -112,6 +112,18 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <TextBlock HorizontalAlignment="Center" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" Width="74"  Height="40" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="3" Grid.Column="1" Margin="0,5,0,5"  >
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect><Run Text="{Binding Richtig, UpdateSourceTrigger=PropertyChanged}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" Width="74"  Height="40" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="3" Grid.Column="2"  >
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect><Run Text="{Binding Falsch, UpdateSourceTrigger=PropertyChanged}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" Width="74"  Height="40" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="3" Grid.Column="0"  >
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect><Run Text="{Binding Anzahl, UpdateSourceTrigger=PropertyChanged}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
 
 
 

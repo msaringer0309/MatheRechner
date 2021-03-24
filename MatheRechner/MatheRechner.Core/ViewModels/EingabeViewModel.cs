@@ -13,13 +13,13 @@ using System.Threading.Tasks;
 
 namespace MatheKönig.Core.ViewModels
 {
-    public class EingabeViewModel : MvxViewModel 
+    public class EingabeViewModel : MvxViewModel
     {
-       public EingabeViewModel()
-       {
-           GenZahl2();
-           GenZahl1();
-       }
+        public EingabeViewModel()
+        {
+            GenZahl2();
+            GenZahl1();
+        }
         private protected IDataService _dataService;
         private protected IMvxNavigationService _navigationService;
 
@@ -50,15 +50,15 @@ namespace MatheKönig.Core.ViewModels
             }
         }
 
-       /* public override async Task Initialize()
-        {
-            await base.Initialize();
+        /* public override async Task Initialize()
+         {
+             await base.Initialize();
 
-            var rechnungen = _dataService.All();
+             var rechnungen = _dataService.All();
 
-            Rechnungen = new MvxObservableCollection<IRechnungItem>(rechnungen);
-        }
-        */
+             Rechnungen = new MvxObservableCollection<IRechnungItem>(rechnungen);
+         }
+         */
         private int _zahl1;
         public int Zahl1
         {
@@ -72,7 +72,7 @@ namespace MatheKönig.Core.ViewModels
         }
 
         private int _zahl2;
-   
+
         public int Zahl2
         {
             get { return _zahl2; }
@@ -126,17 +126,42 @@ namespace MatheKönig.Core.ViewModels
         }
 
         public int Eingabe = 0;
+        int richtigcounter = 0;
+        int falschcounter = 0;
+        int anzahlaufgaben = 1;
 
-        private void EingabeKontrolle()
+
+        public void RichtigGelöst()
         {
-            if (Eingabe == Erg)
+            if (Eingabe == Zahl1 * Zahl2)
             {
-                Debug.WriteLine("Richtig");
+                richtigcounter = richtigcounter + 1;
+                anzahlaufgaben = anzahlaufgaben + 1;
+
             }
             else
             {
-                Debug.WriteLine("Falsch");
+
+                falschcounter = falschcounter + 1;
+                anzahlaufgaben = anzahlaufgaben + 1;
+
             }
+        }
+
+        public int Richtig
+        {
+            get { return richtigcounter; }
+            set { richtigcounter = value; RaisePropertyChanged(() => richtigcounter); }
+        }
+        public int Falsch
+        {
+            get { return falschcounter; }
+            set { falschcounter = value; RaisePropertyChanged(() => falschcounter); }
+        }
+        public int Anzahl
+        {
+            get { return anzahlaufgaben; }
+            set { anzahlaufgaben = value; RaisePropertyChanged(() => anzahlaufgaben); }
         }
     }
 }
