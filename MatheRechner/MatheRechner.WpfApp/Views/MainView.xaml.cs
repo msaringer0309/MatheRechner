@@ -12,6 +12,14 @@ namespace MatheKönig.WpfApp.Views
             InitializeComponent();
         }
 
-        
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
     }
 }
