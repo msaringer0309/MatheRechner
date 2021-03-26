@@ -3,39 +3,60 @@ using MvvmCross.ViewModels;
 using System.Windows.Input;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
+using System.Threading.Tasks;
+using Mathekönig.Models;
+using Mathekönig.Services;
 
 namespace MatheKönig.Core.ViewModels
 {
     public class MainViewModel : MvxViewModel
     {
-        IMvxNavigationService _navService;
+        public class ViewModel : MvxViewModel
+        {
+            private IMvxNavigationService _navService;
+            private IDataService _dataService;
 
-        public MainViewModel(IMvxNavigationService navService)
-        {
-            this._navService = navService;
-        }
-        public class ViewModel 
-        {
             public Calculator Calculator { get; set; }
 
-            public ViewModel()
+            public ViewModel(IMvxNavigationService navService, IDataService dataService)
             {
+                this._navService = navService;
+                this._dataService = dataService;
                 this.Calculator = new Calculator();
 
             }
 
-            private MvxCommand _goToLehrerViewCommand = null;
-
-            public MvxCommand GoToLehrerViewCommand
+            private MvxCommand _goBackCommand = null;
+            public MvxCommand GoBackCommand
             {
                 get
                 {
-                    return _goToLehrerViewCommand ?? (_goToLehrerViewCommand = new MvxCommand(() =>
+                    return _goBackCommand ?? (_goBackCommand = new MvxCommand(() =>
                     {
-
+                        this._navService.Close(this);
                     }));
                 }
             }
+
+            private MvxObservableCollection<IRechnungItem> _rechungen;
+
+            public MvxObservableCollection<IRechnungItem> Rechnungen
+            {
+                get => _rechungen;
+                set => SetProperty(ref _rechungen, value);
+            }
+            public override async Task Initialize()
+            {
+                await base.Initialize();
+
+                var rechnungen = _dataService.All();
+
+                Rechnungen = new MvxObservableCollection<IRechnungItem>(rechnungen);
+            }
+
+
+
+
 
             private ICommand numberCommand;
 

@@ -10,17 +10,34 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
+using static MatheKönig.Core.ViewModels.MainViewModel;
 
 namespace MatheKönig.Core.ViewModels
 {
     public class EingabeViewModel : MvxViewModel
     {
-        public EingabeViewModel()
+       
+        private  IDataService _dataService;
+        private  IMvxNavigationService _navigationService;
+
+        public EingabeViewModel(IMvxNavigationService navigationService, IDataService dataService)
         {
-            
+            this._navigationService = navigationService;
+            this._dataService = dataService;
         }
-        private protected IDataService _dataService;
-        private protected IMvxNavigationService _navigationService;
+        private MvxCommand _goToLehrerViewCommand = null;
+
+        public MvxCommand GoToLehrerViewCommand
+        {
+            get
+            {
+                return _goToLehrerViewCommand ?? (_goToLehrerViewCommand = new MvxCommand(() =>
+                {
+                    this._navigationService.Navigate<MainViewModel>();
+                }));
+            }
+        }
+        
 
         private MvxObservableCollection<IRechnungItem> _rechungen;
 
@@ -30,26 +47,9 @@ namespace MatheKönig.Core.ViewModels
             set => SetProperty(ref _rechungen, value);
         }
 
-        public EingabeViewModel(IMvxNavigationService navigationService, IDataService dataService)
-        {
-            this._navigationService = navigationService;
-            this._dataService = dataService;
-        }
+        
 
-        private MvxCommand _backCommand = null;
-
-        public MvxCommand GoBackCommand
-        {
-            get
-            {
-                return _backCommand ?? (_backCommand = new MvxCommand(() =>
-                {
-                    this._navigationService.Close(this);
-                }));
-            }
-        }
-
-        /* public override async Task Initialize()
+         public override async Task Initialize()
          {
              await base.Initialize();
 
@@ -57,7 +57,8 @@ namespace MatheKönig.Core.ViewModels
 
              Rechnungen = new MvxObservableCollection<IRechnungItem>(rechnungen);
          }
-         */
+        
+         
         private int _zahl1;
         public int Zahl1
         {

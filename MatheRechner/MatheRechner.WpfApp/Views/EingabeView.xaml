@@ -107,7 +107,7 @@
             <TextBlock.Effect>
                 <DropShadowEffect/>
             </TextBlock.Effect><Run Text="{Binding Anzahl, UpdateSourceTrigger=PropertyChanged}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
-        <Button Content="Lehrerview" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="74"/>
+        <Button Content="Lehrerview" Command="{Binding GoToLehrerViewCommand}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="74"/>
 
 
 
