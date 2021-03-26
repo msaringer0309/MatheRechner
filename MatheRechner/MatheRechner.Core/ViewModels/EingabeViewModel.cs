@@ -17,8 +17,7 @@ namespace MatheKönig.Core.ViewModels
     {
         public EingabeViewModel()
         {
-            GenZahl2();
-            GenZahl1();
+            
         }
         private protected IDataService _dataService;
         private protected IMvxNavigationService _navigationService;
@@ -65,12 +64,7 @@ namespace MatheKönig.Core.ViewModels
             get { return _zahl1; }
             set { _zahl1 = value; RaisePropertyChanged(() => Zahl1); }
         }
-        public void GenZahl1()
-        {
-            Random r = new Random();
-            this._zahl1 = r.Next(1, 10);
-        }
-
+        
         private int _zahl2;
 
         public int Zahl2
@@ -78,12 +72,7 @@ namespace MatheKönig.Core.ViewModels
             get { return _zahl2; }
             set { _zahl2 = value; RaisePropertyChanged(() => Zahl2); }
         }
-        public void GenZahl2()
-        {
-            Random r = new Random();
-            this.Zahl2 = r.Next(0, 10);
-        }
-
+    
         private MvxCommand _randCommand = null;
 
         public MvxCommand RandCommand
@@ -101,7 +90,7 @@ namespace MatheKönig.Core.ViewModels
             set => SetProperty(ref _rand, value);
         }
 
-        private void ErstellungZahl()
+        public void ErstellungZahl()
         {
             Random gen = new Random();
             this.Zahl1 = gen.Next(2, 10);
@@ -124,51 +113,65 @@ namespace MatheKönig.Core.ViewModels
                 return _ergCommand ?? (_ergCommand = new MvxCommand(ErstellungZahl));
             }
         }
+        private MvxCommand _checkresult;
+
         public MvxCommand Checkresult
         {
             get
             {
-                return _ergCommand ?? (_ergCommand = new MvxCommand(RichtigGelöst));
+                return _checkresult ?? (_checkresult = new MvxCommand(RichtigGelöst));
             }
         }
-        public int Eingabe = 0;
-        int richtigcounter = 0;
-        int falschcounter = 0;
-        int anzahlaufgaben = 1;
-
-
+        public int Eingabe;
+      
         public void RichtigGelöst()
         {
-            if (this.Eingabe == this.Zahl1 * this.Zahl2)
+            Random gen = new Random();
+            this.Zahl1 = gen.Next(2, 10);
+            this.Zahl2 = gen.Next(2, 10);
+            this.Erg = this.Zahl1 * this.Zahl2;
+
+            if (this.Erg == this.Eingabe)
             {
-                richtigcounter = richtigcounter + 1;
-                anzahlaufgaben = anzahlaufgaben + 1;
+              
+                this.Anzahl = Anzahl + 1;
+                this.Richtig = Richtig + 1;
+               
 
             }
             else
             {
 
-                falschcounter = falschcounter + 1;
-                anzahlaufgaben = anzahlaufgaben + 1;
+                this.Anzahl = Anzahl + 1;
+                this.Falsch = Falsch + 1;
 
             }
         }
 
-        public int Richtig
-        {
-            get { return richtigcounter; }
-            set { richtigcounter = value; RaisePropertyChanged(() => richtigcounter); }
-        }
-        public int Falsch
-        {
-            get { return falschcounter; }
-            set { falschcounter = value; RaisePropertyChanged(() => falschcounter); }
-        }
+        private int _anzahlaufgaben;
+
         public int Anzahl
         {
-            get { return anzahlaufgaben; }
-            set { anzahlaufgaben = value; RaisePropertyChanged(() => anzahlaufgaben); }
+            get { return _anzahlaufgaben; }
+            set { _anzahlaufgaben = value; RaisePropertyChanged(() => Anzahl); Checkresult.RaiseCanExecuteChanged(); }
         }
+
+        private int _richtiggelöst;
+
+        public int Richtig
+        {
+            get { return _richtiggelöst; }
+            set { _richtiggelöst = value; RaisePropertyChanged(() => Richtig); Checkresult.RaiseCanExecuteChanged(); }
+        }
+
+        private int _falschgelöst;
+
+        public int Falsch
+        {
+            get { return _falschgelöst; }
+            set { _falschgelöst = value; RaisePropertyChanged(() => Falsch); Checkresult.RaiseCanExecuteChanged(); }
+        }
+
     }
 }
     
