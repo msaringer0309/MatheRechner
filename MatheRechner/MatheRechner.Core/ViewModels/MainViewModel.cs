@@ -1,12 +1,19 @@
 ﻿using System;
 using MvvmCross.ViewModels;
 using System.Windows.Input;
-
+using MvvmCross.Commands;
+using MvvmCross.Navigation;
 
 namespace MatheKönig.Core.ViewModels
 {
     public class MainViewModel : MvxViewModel
     {
+        IMvxNavigationService _navService;
+
+        public MainViewModel(IMvxNavigationService navService)
+        {
+            this._navService = navService;
+        }
         public class ViewModel 
         {
             public Calculator Calculator { get; set; }
@@ -15,6 +22,19 @@ namespace MatheKönig.Core.ViewModels
             {
                 this.Calculator = new Calculator();
 
+            }
+
+            private MvxCommand _goToLehrerViewCommand = null;
+
+            public MvxCommand GoToLehrerViewCommand
+            {
+                get
+                {
+                    return _goToLehrerViewCommand ?? (_goToLehrerViewCommand = new MvxCommand(() =>
+                    {
+
+                    }));
+                }
             }
 
             private ICommand numberCommand;
