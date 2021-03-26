@@ -124,7 +124,13 @@ namespace MatheKönig.Core.ViewModels
                 return _ergCommand ?? (_ergCommand = new MvxCommand(ErstellungZahl));
             }
         }
-
+        public MvxCommand Checkresult
+        {
+            get
+            {
+                return _ergCommand ?? (_ergCommand = new MvxCommand(RichtigGelöst));
+            }
+        }
         public int Eingabe = 0;
         int richtigcounter = 0;
         int falschcounter = 0;
@@ -133,7 +139,7 @@ namespace MatheKönig.Core.ViewModels
 
         public void RichtigGelöst()
         {
-            if (Eingabe == Zahl1 * Zahl2)
+            if (this.Eingabe == this.Zahl1 * this.Zahl2)
             {
                 richtigcounter = richtigcounter + 1;
                 anzahlaufgaben = anzahlaufgaben + 1;
