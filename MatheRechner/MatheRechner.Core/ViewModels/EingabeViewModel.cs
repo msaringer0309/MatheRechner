@@ -123,8 +123,23 @@ namespace MatheKönig.Core.ViewModels
                 return _checkresult ?? (_checkresult = new MvxCommand(RichtigGelöst));
             }
         }
-        public int Eingabe;
-      
+
+        
+        public int Eingabe
+        {
+            get
+            {
+                return this._eingabe;
+            }
+            set
+            {
+                //this._name = value;
+                //RaisePropertyChanged(() => Name);
+                SetProperty(ref _eingabe, value);
+                MainViewCommand.RaiseCanExecuteChanged();
+            }
+        }
+
         public void RichtigGelöst()
         {
             Random gen = new Random();
@@ -132,6 +147,8 @@ namespace MatheKönig.Core.ViewModels
             this.Zahl2 = gen.Next(2, 10);
             this.Erg = this.Zahl1 * this.Zahl2;
 
+            
+        
             if (this.Erg == this.Eingabe)
             {
               
@@ -140,7 +157,7 @@ namespace MatheKönig.Core.ViewModels
                
 
             }
-            else
+            else 
             {
 
                 this.Anzahl = Anzahl + 1;
@@ -148,7 +165,7 @@ namespace MatheKönig.Core.ViewModels
 
             }
         }
-
+        
         private int _anzahlaufgaben;
 
         public int Anzahl
