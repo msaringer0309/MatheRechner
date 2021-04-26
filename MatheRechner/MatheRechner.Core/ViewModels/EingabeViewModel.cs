@@ -34,7 +34,7 @@ namespace MatheKönig.Core.ViewModels
         {
             get
             {
-                return _SaveResult ?? (_SaveResult = new MvxCommand(SaveData));
+                return _SaveResult ?? (_SaveResult = new MvxCommand(SaveData, CanGenerateData));
             }
         }
 
@@ -54,6 +54,11 @@ namespace MatheKönig.Core.ViewModels
             this.Zahl1 = gen.Next(2, 10);
             this.Zahl2 = gen.Next(2, 10);
             this.Erg = this.Zahl1 * this.Zahl2;
+        }
+
+        private bool CanGenerateData()
+        {
+            return this.NameSave?.Length > 0;
         }
 
         private int _zahl1;
@@ -180,7 +185,8 @@ namespace MatheKönig.Core.ViewModels
             {
                 _NameSave = value;
                 RaisePropertyChanged(() => NameSave);
-                
+                SaveResult.RaiseCanExecuteChanged();
+
             }
         }
 
