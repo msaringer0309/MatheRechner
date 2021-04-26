@@ -6,7 +6,7 @@ namespace Mathekönig.Models
 {
     public interface IRechnungItem
     {
-        string Rechnungsnummer { get; set; }
+        string ID { get; set; }
 
         public string Name { get; set; }
         public int Richtige { get; set; }

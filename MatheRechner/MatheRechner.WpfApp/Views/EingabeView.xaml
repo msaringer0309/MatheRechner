@@ -7,112 +7,122 @@
         xmlns:views="clr-namespace:MvvmCross.Platforms.Wpf.Views;assembly=MvvmCross.Platforms.Wpf"
         mc:Ignorable="d" Height="459" Width="721"
         >
-    <Grid RenderTransformOrigin="0.505,0.577">
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#451F55" Offset="0.9"/>
-                <GradientStop Color="#F8C630" Offset="0.1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+    <Grid>
+        <Grid Background="White" Visibility ="{Binding Visibility}" Panel.ZIndex="10">
+            <TextBox HorizontalAlignment="Center"  Text="{Binding ChooseMalreihe, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  Height="40" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Margin="0,135,0,0"  />
+            <Button Content="OK" Command="{Binding SetMalreihe}" HorizontalAlignment="Center" Margin="0,256,0,0" VerticalAlignment="Top" Width="74"/>
+            <TextBlock HorizontalAlignment="Center"  Text="Geben Sie Ihre gewünschte Malreihe ein! (1-10)" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="700"  Height="40" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Margin="0,10,0,0"  />
+
+        </Grid>
+        <Grid>
 
 
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-
-
-
-        <TextBlock Grid.Row="0" TextWrapping="Wrap" Background="{x:Null}"  FontSize="36" FontWeight="Bold" Foreground="White" Margin="0,29,0,33" HorizontalAlignment="Center" Width="231" Grid.Column="1" >
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect><Run Language="de-at" Text="Mathe-König"/></TextBlock>
-
-        <Image Grid.ColumnSpan="1" Source="D:\Schule\APR\MatheRechner\Bilder\corona.png" HorizontalAlignment="Left" Height="110" Margin="40,0,0,0" VerticalAlignment="Center" Width="127"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" RenderTransformOrigin="0.193,0.549" Height="26" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="20" Grid.Row="1" Grid.ColumnSpan="2" Margin="10,12,0,0" >
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect><Run Text="Löse die angegebenen"/><Run Text=" Aufgaben"/><Run Text=" "/><Run Language="de-at" Text=":"/></TextBlock>
-        <TextBlock Grid.ColumnSpan="1" HorizontalAlignment="Left" Margin="40,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" RenderTransformOrigin="0.193,0.549" Height="18" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="16" Grid.Row="2" >
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect><Run Language="de-at" Text="Anzahl der Aufgaben"/><LineBreak/><Run Language="de-at"/></TextBlock>
-        <TextBlock HorizontalAlignment="Center" Margin="0,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.193,0.549" Height="18" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="16" Grid.Row="2" Grid.Column="1" >
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect><Run Language="de-at" Text="richtig gelöst"/><LineBreak/><Run Language="de-at"/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Center" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.193,0.549" Height="34" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="4" Grid.Column="1" Margin="0,22,0,0">
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect><Run Text="*"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
-        <TextBox Text="{Binding Eingabe, UpdateSourceTrigger=PropertyChanged}" FontSize="25" TextWrapping="Wrap"  Grid.Row="5" HorizontalAlignment="Center" Width="92" Grid.Column="1" Margin="0,5,0,20" TextChanged="TextBox_TextChanged" TextAlignment="Center">
-            <TextBox.Effect>
-                <DropShadowEffect/>
-            </TextBox.Effect>
-            <TextBox.Background>
+            <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="White" Offset="0.331"/>
-                    <GradientStop Color="White" Offset="0.986"/>
+                    <GradientStop Color="#451F55" Offset="0.9"/>
+                    <GradientStop Color="#F8C630" Offset="0.1"/>
                 </LinearGradientBrush>
-            </TextBox.Background>
-        </TextBox>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.193,0.549" Height="18" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="16" Grid.Row="2" Grid.Column="2" Margin="0,16,0,0" >
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect><Run Language="de-at" Text="falsch gelöst"/><LineBreak/><Run Language="de-at"/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" Width="74" RenderTransformOrigin="0.193,0.549" Height="40" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="4" Grid.Column="1" Margin="0,17,163,0">
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect><Run Text="{Binding Zahl1, UpdateSourceTrigger=PropertyChanged}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Right" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.193,0.549" Height="40" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="4" Grid.Column="1" Margin="167,21,0,0" >
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect><Run Text="{Binding Zahl2}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
-        <Button Command="{Binding Checkresult}" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="20" Content="Nächste Aufgabe" HorizontalAlignment="Center" Height="36" Grid.Row="6" Grid.ColumnSpan="1" VerticalAlignment="Top" Width="315" Click="Button_Click" Margin="20,20,20,20" Grid.Column="1" >
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-            <Button.BorderBrush>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="White" Offset="0.824"/>
-                    <GradientStop Color="White" Offset="0"/>
-                </LinearGradientBrush>
-            </Button.BorderBrush>
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="White" Offset="0.19"/>
-                    <GradientStop Color="#FFEA0828" Offset="0.845"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <TextBlock HorizontalAlignment="Center" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" Width="74"  Height="40" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="3" Grid.Column="1" Margin="0,5,0,5"  >
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect><Run Text="{Binding Richtig, UpdateSourceTrigger=PropertyChanged}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Center" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" Width="74"  Height="40" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="3" Grid.Column="2"  >
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect><Run Text="{Binding Falsch, UpdateSourceTrigger=PropertyChanged}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Center" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" Width="74"  Height="40" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="3" Grid.Column="0"  >
-            <TextBlock.Effect>
-                <DropShadowEffect/>
-            </TextBlock.Effect><Run Text="{Binding Anzahl, UpdateSourceTrigger=PropertyChanged}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
-        <Button Content="Speichern" Command="{Binding SaveResult}" HorizontalAlignment="Left" Margin="120,60,0,0" VerticalAlignment="Top" Width="74" Grid.Column="2" Grid.Row="5" Grid.RowSpan="2"/>
-        <TextBox HorizontalAlignment="Left" Visibility="Hidden" Text="{Binding Erg, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="74"  Height="40" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="4" Margin="40,13,0,0"  >
-        </TextBox>
-        <TextBox HorizontalAlignment="Left"  Text="{Binding NameSave, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  Height="40" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="6" Margin="97,20,0,0" Grid.Column="2"  >
-        </TextBox>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
 
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+
+
+            <TextBlock Grid.Row="0" TextWrapping="Wrap" Background="{x:Null}"  FontSize="36" FontWeight="Bold" Foreground="White" Margin="0,29,0,33" HorizontalAlignment="Center" Width="231" Grid.Column="1" >
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect><Run Language="de-at" Text="Mathe-König"/></TextBlock>
+
+
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" RenderTransformOrigin="0.193,0.549" Height="26" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="20" Grid.Row="1" Grid.ColumnSpan="2" Margin="10,12,0,0" >
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect><Run Text="Löse die angegebenen"/><Run Text=" Aufgaben"/><Run Text=" "/><Run Language="de-at" Text=":"/></TextBlock>
+            <TextBlock Grid.ColumnSpan="1" HorizontalAlignment="Left" Margin="40,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" RenderTransformOrigin="0.193,0.549" Height="18" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="16" Grid.Row="2" >
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect><Run Language="de-at" Text="Anzahl der Aufgaben"/><LineBreak/><Run Language="de-at"/></TextBlock>
+            <TextBlock HorizontalAlignment="Center" Margin="0,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.193,0.549" Height="18" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="16" Grid.Row="2" Grid.Column="1" >
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect><Run Language="de-at" Text="richtig gelöst"/><LineBreak/><Run Language="de-at"/><LineBreak/><Run/></TextBlock>
+            <TextBlock HorizontalAlignment="Center" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.193,0.549" Height="34" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="4" Grid.Column="1" Margin="0,22,0,0">
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect><Run Text="*"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+            <TextBox Text="{Binding Eingabe, UpdateSourceTrigger=PropertyChanged}" FontSize="25" TextWrapping="Wrap"  Grid.Row="5" HorizontalAlignment="Center" Width="92" Grid.Column="1" Margin="0,5,0,20" TextChanged="TextBox_TextChanged" TextAlignment="Center">
+                <TextBox.Effect>
+                    <DropShadowEffect/>
+                </TextBox.Effect>
+                <TextBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.331"/>
+                        <GradientStop Color="White" Offset="0.986"/>
+                    </LinearGradientBrush>
+                </TextBox.Background>
+            </TextBox>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.193,0.549" Height="18" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="16" Grid.Row="2" Grid.Column="2" Margin="0,16,0,0" >
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect><Run Language="de-at" Text="falsch gelöst"/><LineBreak/><Run Language="de-at"/><LineBreak/><Run/></TextBlock>
+            <TextBlock HorizontalAlignment="Left" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" Width="74" RenderTransformOrigin="0.193,0.549" Height="40" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="4" Grid.Column="1" Margin="0,17,163,0">
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect><Run Text="{Binding Zahl1, UpdateSourceTrigger=PropertyChanged}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+            <TextBlock HorizontalAlignment="Right" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.193,0.549" Height="40" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="4" Grid.Column="1" Margin="167,21,0,0" >
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect><Run Text="{Binding Zahl2}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+            <Button Command="{Binding Checkresult}" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="20" Content="Nächste Aufgabe" HorizontalAlignment="Center" Height="36" Grid.Row="6" Grid.ColumnSpan="1" VerticalAlignment="Top" Width="315" Click="Button_Click" Margin="20,20,20,20" Grid.Column="1" >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+                <Button.BorderBrush>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.824"/>
+                        <GradientStop Color="White" Offset="0"/>
+                    </LinearGradientBrush>
+                </Button.BorderBrush>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.19"/>
+                        <GradientStop Color="#FFEA0828" Offset="0.845"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBlock HorizontalAlignment="Center" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" Width="74"  Height="40" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="3" Grid.Column="1" Margin="0,5,0,5"  >
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect><Run Text="{Binding Richtig, UpdateSourceTrigger=PropertyChanged}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+            <TextBlock HorizontalAlignment="Center" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" Width="74"  Height="40" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="3" Grid.Column="2"  >
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect><Run Text="{Binding Falsch, UpdateSourceTrigger=PropertyChanged}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+            <TextBlock HorizontalAlignment="Center" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Center" Width="74"  Height="40" Foreground="White" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="3" Grid.Column="0"  >
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect><Run Text="{Binding Anzahl, UpdateSourceTrigger=PropertyChanged}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+            <Button Content="Speichern" Command="{Binding SaveResult}" HorizontalAlignment="Left" Margin="120,60,0,0" VerticalAlignment="Top" Width="74" Grid.Column="2" Grid.Row="5" Grid.RowSpan="2"/>
+            <TextBox HorizontalAlignment="Left" Visibility="Hidden" Text="{Binding Erg, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="74"  Height="40" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="4" Margin="40,13,0,0"  >
+            </TextBox>
+            <TextBox HorizontalAlignment="Left"  Text="{Binding NameSave, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"  Height="40" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="6" Margin="97,20,0,0" Grid.Column="2"  >
+            </TextBox>
+
+        </Grid>
 
 
 

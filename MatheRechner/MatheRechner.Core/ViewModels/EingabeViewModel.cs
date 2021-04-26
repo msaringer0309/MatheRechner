@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
-using static MatheKönig.Core.ViewModels.MainViewModel;
+
 
 namespace MatheKönig.Core.ViewModels
 {
@@ -22,7 +22,7 @@ namespace MatheKönig.Core.ViewModels
 
         public EingabeViewModel(IMvxNavigationService navigationService, IDataService dataService)
         {
-            Rechnungserstellung();
+            
             this._navigationService = navigationService;
             this._dataService = dataService;
         }
@@ -52,7 +52,7 @@ namespace MatheKönig.Core.ViewModels
         {
             Random gen = new Random();
             this.Zahl1 = gen.Next(2, 10);
-            this.Zahl2 = gen.Next(2, 10);
+            this.Zahl2 = this.ChooseMalreihe;
             this.Erg = this.Zahl1 * this.Zahl2;
         }
 
@@ -190,6 +190,59 @@ namespace MatheKönig.Core.ViewModels
             }
         }
 
+        private int _ChooseMalreihe;
+        public int ChooseMalreihe
+        {
+            get
+            {
+                return _ChooseMalreihe;
+            }
+            set
+            {
+                _ChooseMalreihe = value;
+                RaisePropertyChanged(() => ChooseMalreihe);
+                SetMalreihe.RaiseCanExecuteChanged();
+
+            }
+        }
+
+        private bool CanSaveMalreihe()
+        {
+            return this.ChooseMalreihe != 0 && this.ChooseMalreihe < 11; 
+        }
+
+
+        private MvxCommand _SetMalreihe;
+
+        public MvxCommand SetMalreihe
+        {
+            get
+            {
+                return _SetMalreihe ?? (_SetMalreihe = new MvxCommand(SaveMalreihe, CanSaveMalreihe));
+            }
+        }
+
+        private void SaveMalreihe()
+        {
+            Rechnungserstellung();
+            this.Visibility = "Hidden";
+        }
+        
+        private string _Visibility;
+        public string Visibility
+        {
+            get
+            {
+                return _Visibility;
+            }
+            set
+            {
+                _Visibility = value;
+                RaisePropertyChanged(() => Visibility);
+                
+
+            }
+        }
     }
 }
     

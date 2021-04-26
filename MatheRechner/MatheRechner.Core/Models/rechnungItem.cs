@@ -5,13 +5,13 @@ using System.Text;
 
 namespace Mathekönig.Models
 {
-    [Table("rechnung")]
+    [Table("Datensammlung")]
     public class RechnungItem : IRechnungItem
     {
 
-        [PrimaryKey, Column("Rechnungsnummer")]
+        [PrimaryKey, Column("ID")]
 
-        public string Rechnungsnummer { get; set; } = Guid.NewGuid().ToString();
+        public string ID { get; set; } = Guid.NewGuid().ToString();
 
         
         

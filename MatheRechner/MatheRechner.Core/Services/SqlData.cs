@@ -11,7 +11,7 @@ namespace MatheKönig.Core.Services
 {
     public class SqlData : IDataService
     {
-        private string Filename { get; set; } = "rechnungen.db";
+        private string Filename { get; set; } = "Daten.db";
 
         private string Dir { get; set; } = Directory.GetCurrentDirectory();
 
@@ -35,7 +35,7 @@ namespace MatheKönig.Core.Services
             var rechnungen = from r in this.Conn.Table<RechnungItem>()
                              select new RechnungItem()
                              {
-                                 Rechnungsnummer = r.Rechnungsnummer,
+                                 ID = r.ID,
                                  Name = r.Name,
                                  Richtige = r.Richtige,
                                  Falsche = r.Falsche,
