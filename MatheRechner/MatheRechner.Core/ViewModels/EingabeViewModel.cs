@@ -22,6 +22,7 @@ namespace MatheKönig.Core.ViewModels
 
         public EingabeViewModel(IMvxNavigationService navigationService, IDataService dataService)
         {
+            Rechnungserstellung();
             this._navigationService = navigationService;
             this._dataService = dataService;
         }
@@ -59,6 +60,14 @@ namespace MatheKönig.Core.ViewModels
          }
         
          
+        private void Rechnungserstellung()
+        {
+            Random gen = new Random();
+            this.Zahl1 = gen.Next(2, 10);
+            this.Zahl2 = gen.Next(2, 10);
+            this.Erg = this.Zahl1 * this.Zahl2;
+        }
+
         private int _zahl1;
         public int Zahl1
         {
@@ -74,15 +83,7 @@ namespace MatheKönig.Core.ViewModels
             set { _zahl2 = value; RaisePropertyChanged(() => Zahl2); }
         }
     
-        private MvxCommand _randCommand = null;
-
-        public MvxCommand RandCommand
-        {
-            get
-            {
-                return _randCommand ?? (_randCommand = new MvxCommand(ErstellungZahl));
-            }
-        }
+       
 
         private bool _rand = false;
         public bool Rand
@@ -91,29 +92,24 @@ namespace MatheKönig.Core.ViewModels
             set => SetProperty(ref _rand, value);
         }
 
-        public void ErstellungZahl()
-        {
-            Random gen = new Random();
-            this.Zahl1 = gen.Next(2, 10);
-            this.Zahl2 = gen.Next(2, 10);
-            this.Erg = this.Zahl1 * this.Zahl2;
-        }
 
-        private int _erg;
+
+        private int _Erg;
         public int Erg
-        {
-            get => _erg;
-            set => SetProperty(ref _erg, value);
-        }
-
-        private MvxCommand _ergCommand = null;
-        public MvxCommand ErgCommand
         {
             get
             {
-                return _ergCommand ?? (_ergCommand = new MvxCommand(ErstellungZahl));
+                return _Erg;
+            }
+            set
+            {
+                _Erg = value;
+                RaisePropertyChanged(() => Erg);
+                Checkresult.RaiseCanExecuteChanged();
             }
         }
+
+
         private MvxCommand _checkresult;
 
         public MvxCommand Checkresult
@@ -123,21 +119,30 @@ namespace MatheKönig.Core.ViewModels
                 return _checkresult ?? (_checkresult = new MvxCommand(RichtigGelöst));
             }
         }
-        public int Eingabe;
-      
+        private int _Eingabe;
+        public int Eingabe
+        {
+            get
+            {
+                return _Eingabe;
+            }
+            set
+            {
+                _Eingabe = value;
+                RaisePropertyChanged(() => Eingabe);
+                Checkresult.RaiseCanExecuteChanged();
+            }
+        }
+
         public void RichtigGelöst()
         {
-            Random gen = new Random();
-            this.Zahl1 = gen.Next(2, 10);
-            this.Zahl2 = gen.Next(2, 10);
-            this.Erg = this.Zahl1 * this.Zahl2;
-
-            if (this.Erg == this.Eingabe)
+            
+            if (this.Eingabe == this.Erg)
             {
               
                 this.Anzahl = Anzahl + 1;
                 this.Richtig = Richtig + 1;
-               
+                Rechnungserstellung();
 
             }
             else
@@ -145,6 +150,7 @@ namespace MatheKönig.Core.ViewModels
 
                 this.Anzahl = Anzahl + 1;
                 this.Falsch = Falsch + 1;
+                Rechnungserstellung();
 
             }
         }

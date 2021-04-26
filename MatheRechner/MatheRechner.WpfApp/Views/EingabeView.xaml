@@ -108,6 +108,9 @@
                 <DropShadowEffect/>
             </TextBlock.Effect><Run Text="{Binding Anzahl, UpdateSourceTrigger=PropertyChanged}"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
         <Button Content="Lehrerview" Command="{Binding GoToLehrerViewCommand}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="74"/>
+        <TextBox HorizontalAlignment="Left" Visibility="Hidden" Text="{Binding Erg, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center"  TextWrapping="Wrap" VerticalAlignment="Top" Width="74"  Height="40" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="30" Grid.Row="4" Margin="40,13,0,0"  >
+        </TextBox>
+
 
 
 
