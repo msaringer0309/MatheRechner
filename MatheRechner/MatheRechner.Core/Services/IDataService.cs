@@ -11,8 +11,6 @@ namespace Mathekönig.Services
 
         bool Add(IRechnungItem rechnung);
 
-        bool Delete(IRechnungItem rechnung);
-
         bool Save();
     }
 }

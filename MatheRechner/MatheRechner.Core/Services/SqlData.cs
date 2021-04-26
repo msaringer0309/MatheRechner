@@ -36,7 +36,9 @@ namespace MatheKönig.Core.Services
                              select new RechnungItem()
                              {
                                  Rechnungsnummer = r.Rechnungsnummer,
-                                 Rechnung = r.Rechnung,
+                                 Name = r.Name,
+                                 Richtige = r.Richtige,
+                                 Falsche = r.Falsche,
                                  GeneratedDateTime = r.GeneratedDateTime
                              };
             
@@ -52,14 +54,7 @@ namespace MatheKönig.Core.Services
 
         
 
-        public bool Delete(IRechnungItem rechnung)
-        {
-            var item = from rng in this.Conn.Table<RechnungItem>()
-                       where rng.Rechnungsnummer == rechnung.Rechnungsnummer
-                       select rng;
-            var count = this.Conn.Delete(item);
-            return count > 0;
-        }
+        
 
         public bool Save()
         {

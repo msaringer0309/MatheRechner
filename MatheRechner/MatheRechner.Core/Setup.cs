@@ -12,7 +12,6 @@ namespace MatheKönig.Core
         public override void Initialize()
         {
 
-            Mvx.IoCProvider.RegisterType<IDataService>();
             Mvx.IoCProvider.RegisterSingleton<IDataService>(new SqlData());
 
 

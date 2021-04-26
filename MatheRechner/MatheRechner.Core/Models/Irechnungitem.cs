@@ -8,7 +8,9 @@ namespace Mathekönig.Models
     {
         string Rechnungsnummer { get; set; }
 
-        public string Rechnung { get; set; }
+        public string Name { get; set; }
+        public int Richtige { get; set; }
+        public int Falsche { get; set; }
 
         public DateTime GeneratedDateTime { get; set; }
 

@@ -26,40 +26,28 @@ namespace MatheKönig.Core.ViewModels
             this._navigationService = navigationService;
             this._dataService = dataService;
         }
-        private MvxCommand _goToLehrerViewCommand = null;
 
-        public MvxCommand GoToLehrerViewCommand
+
+        private MvxCommand _SaveResult;
+
+        public MvxCommand SaveResult
         {
             get
             {
-                return _goToLehrerViewCommand ?? (_goToLehrerViewCommand = new MvxCommand(() =>
-                {
-                    this._navigationService.Navigate<MainViewModel>();
-                }));
+                return _SaveResult ?? (_SaveResult = new MvxCommand(SaveData));
             }
         }
-        
 
-        private MvxObservableCollection<IRechnungItem> _rechungen;
-
-        public MvxObservableCollection<IRechnungItem> Rechnungen
+        private void SaveData()
         {
-            get => _rechungen;
-            set => SetProperty(ref _rechungen, value);
+            RechnungItem r = new RechnungItem();
+            r.Richtige = this.Richtig;
+            r.Falsche = this.Falsch;
+            r.Name = this.NameSave;
+            r.GeneratedDateTime = DateTime.Now;
+            this._dataService.Add(r);
         }
 
-        
-
-         public override async Task Initialize()
-         {
-             await base.Initialize();
-
-             var rechnungen = _dataService.All();
-
-             Rechnungen = new MvxObservableCollection<IRechnungItem>(rechnungen);
-         }
-        
-         
         private void Rechnungserstellung()
         {
             Random gen = new Random();
@@ -131,6 +119,7 @@ namespace MatheKönig.Core.ViewModels
                 _Eingabe = value;
                 RaisePropertyChanged(() => Eingabe);
                 Checkresult.RaiseCanExecuteChanged();
+
             }
         }
 
@@ -153,6 +142,7 @@ namespace MatheKönig.Core.ViewModels
                 Rechnungserstellung();
 
             }
+            this.Eingabe = 0;
         }
 
         private int _anzahlaufgaben;
@@ -177,6 +167,21 @@ namespace MatheKönig.Core.ViewModels
         {
             get { return _falschgelöst; }
             set { _falschgelöst = value; RaisePropertyChanged(() => Falsch); Checkresult.RaiseCanExecuteChanged(); }
+        }
+
+        private string _NameSave;
+        public string NameSave
+        {
+            get
+            {
+                return _NameSave;
+            }
+            set
+            {
+                _NameSave = value;
+                RaisePropertyChanged(() => NameSave);
+                
+            }
         }
 
     }
