@@ -9,7 +9,7 @@
         >
     <Grid>
 
-        <Grid Visibility ="{Binding Visibility}" Panel.ZIndex="0">
+        <Grid Visibility ="{Binding Visibility}" Panel.ZIndex="10">
 
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
