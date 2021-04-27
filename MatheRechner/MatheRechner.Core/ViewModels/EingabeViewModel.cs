@@ -208,7 +208,7 @@ namespace MatheKönig.Core.ViewModels
 
         private bool CanSaveMalreihe()
         {
-            return this.ChooseMalreihe != 0 && this.ChooseMalreihe < 11; 
+            return this.ChooseMalreihe > 0 & this.ChooseMalreihe < 11;
         }
 
 
