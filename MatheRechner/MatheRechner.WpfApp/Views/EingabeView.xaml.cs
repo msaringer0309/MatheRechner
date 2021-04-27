@@ -22,5 +22,10 @@ namespace MatheKönig.WpfApp.Views
         {
 
         }
+
+        private void TextBox_TextChanged_1(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+
+        }
     }
 }

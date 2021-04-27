@@ -7,6 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\dino.png" />
+    <None Remove="Views\ei.png" />
+    <None Remove="Views\ei2.png" />
+    <None Remove="Views\kisspng-mathematics-cartoon-division-clip-art-maths-sign-5aab7ff88e0798.6116215315211888565818.png" />
+    <None Remove="Views\pngwing.com.png" />
+    <None Remove="Views\sun.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Remove="Views\MainWindow.xaml" />
   </ItemGroup>
 
@@ -21,6 +30,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MatheRechner.Core\MatheKönig.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\dino.png" />
+    <Resource Include="Views\ei.png" />
+    <Resource Include="Views\ei2.png" />
+    <Resource Include="Views\kisspng-mathematics-cartoon-division-clip-art-maths-sign-5aab7ff88e0798.6116215315211888565818.png" />
+    <Resource Include="Views\pngwing.com.png" />
+    <Resource Include="Views\sun.png" />
   </ItemGroup>
 
   <ItemGroup>
