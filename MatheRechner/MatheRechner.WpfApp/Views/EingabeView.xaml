@@ -9,7 +9,7 @@
         >
     <Grid>
 
-        <Grid Visibility ="{Binding Visibility}" Panel.ZIndex="10">
+        <Grid Visibility ="{Binding Visibility}" Panel.ZIndex="0">
 
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -172,7 +172,7 @@
                 <TextBlock.Effect>
                     <DropShadowEffect/>
                 </TextBlock.Effect><Run Text=""/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
-            <Button Command="{Binding Checkresult}" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="20" Content="Nächste Aufgabe" HorizontalAlignment="Center" Height="36" Grid.Row="7" VerticalAlignment="Center" Width="315" Click="Button_Click" Grid.Column="1" >
+            <Button Command="{Binding Checkresult}" Foreground="Black" FontWeight="Bold" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="20" Content="Nächste Aufgabe" HorizontalAlignment="Center" Height="36" Grid.Row="7" VerticalAlignment="Top" Width="288" Click="Button_Click" Grid.Column="1" >
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect>
